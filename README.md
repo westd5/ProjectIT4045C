@@ -1,6 +1,7 @@
 # Feast Feed
 
 Ishani Saxena, Ella Terselic, Isaac Van Meter, Daniel West
+
 6/4/2023
 
 ## Introduction
@@ -35,3 +36,66 @@ Profile Screen:
 
 Settings Screen:
 ![image](https://github.com/westd5/ProjectIT4045C/assets/77344568/241b94a3-2eb2-42d8-b17b-9be0c9055f59)
+
+## Functional Requirements
+
+1. As someone who enjoys cooking, I want to be able to view other people’s recipes so that I can replicate these myself. 
+   - Given: I am a Feast Feed user.
+   - When: I search for a recipe.
+   - Then: I am given results that contain recipes shared by other users.
+
+2. As someone who enjoys cooking, I want to be able to share my recipes with the cooking community so that others can see what I’ve created and remake my recipes for themselves.
+   - Given: I am a Feast Feed user.
+   - When: I create a recipe on Feast Feed.
+   - Then: I am given an option to upload my recipe for others to view.
+
+3. As someone who enjoys cooking, I want to be able to communicate with other members of the cooking community through comments, likes and posts so that I can give and receive feedback about recipes. 
+   - Given: I am a Feast Feed user.
+   - When: Either myself or someone else posts a recipe.
+   - Then: I have the ability to comment, rate, or in other ways interact with that content.
+
+## Class Diagram
+![image](https://github.com/westd5/ProjectIT4045C/assets/77344568/d12a15a9-8992-40a5-af2d-3a229e860526)
+
+## Class Diagram Description
+Shown above, there are four packages:
+  - The Data Transfer Object (DTO) Package
+    - This package is used to make the data accessible to all other packages in an organized manner.
+    - Commonly referred to as all the nouns of a given application.
+      - User
+      - Recipe
+      - Photos
+      - Categories
+    - And all sub-datapoints under these objects such as
+      - UserID
+      - Username
+      - Password
+      - Bio
+  - The Data Access Object (DAO) Package
+    - The DAO package makes use of the DTO package’s objects to connect them to the services 
+    - This is where a user will be generated when making an account, it will grab not only username and password, but also update their record when they go to add a friend, or like a recipe.
+    - Note that there are two ways a user, recipe, or photo can be “realized”
+      - Through assembling actual user inputs.
+      - Or generated a fake piece of data for UI testing.
+  -	The Service Package
+    -	The service package is like the DAO in making the data accessible, the service package will also refine the data in a way that makes it much more accessible for the UI side.
+  -	The User Interface (UI) Package
+    -	The UI package will have functions (update services) that update the user’s data.
+      -	When they create their account.
+      -	When the add/remove a friend.
+      -	When they add/edit a recipe.
+
+## Scrum Board Link
+https://github.com/westd5/ProjectIT4045C/projects
+
+## Scrum Roles
+### UI Specialist 
+ - Ishani Saxena
+ - Ella Terselic
+### Business Logic and Persistence Specialist
+ - Isaac Van Meter
+### Product Owner/Scrum Master/GitHub Administrator
+ - Daniel West
+
+## GitHub Project Link
+https://github.com/westd5/ProjectIT4045C
